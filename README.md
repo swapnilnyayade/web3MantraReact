@@ -1,9 +1,9 @@
 # Instructions
-1.Go to the project folder
-2.run following commands:
-  git init
-  npm i
-  npm start
+1.Go to the project folder.\
+2.Run following commands:\
+  git init\
+  npm i\
+  npm start\
   
 
 # Getting Started with Create React App
