@@ -3,7 +3,7 @@
 2.Run following commands:\
   git init\
   npm i\
-  npm start\
+  npm start
   
 
 # Getting Started with Create React App
