@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+  color: black;
+  display: flex;             
+  align-items: center;        
+  flex-direction: column;
+}
+
+h1 {
+  margin: 0;
+}
+
+.header {
+  background-color: #130f40;
+  color: white;
+  padding: 14px;
+  width: 100%;
+}
+
+.form {
+  margin-top: 20px;
+}
+
+.data {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;                    /*  to make elements inside the .main to take space as required */
+  align-items: center;              /*  to make elements in centre vertically                       */
+  flex-direction: column;           /*  to make elements inside the .data vertical                  */
+  margin-top: 20px;
+}
+
+.data_val {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  padding: 0px 9px 0px 9px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
