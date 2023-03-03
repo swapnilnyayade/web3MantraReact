@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/62053997/222721269-f3da748b-ac39-4dae-924f-1b27b5de63f4.png)
+
+
 # Instructions
 1.Go to the project folder.\
 2.Run following commands:\
