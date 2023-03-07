@@ -23,7 +23,13 @@ function App() {
     setForm({ name: "", email: "" })
 
   }
-
+  
+  const removeItem = (index) => {
+    let arr = data
+    arr.splice(index, 1)
+    setData([...arr])
+  }
+  
   return (
     <div className="App">
       <Header />
@@ -51,7 +57,7 @@ function App() {
         {
           data.map((element, index) => {
             return (
-              <Field name={element.name} email={element.email} index={index} data={element.data} setData={setData} key={index}/>
+              <Field name={element.name} email={element.email} index={index} removeItem={removeItem} key={index}/>
               // <div className='data_val' key={index}>
 
               //   <h4>{element.name}</h4>
