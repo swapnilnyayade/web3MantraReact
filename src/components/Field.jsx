@@ -2,13 +2,7 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const Field = ({name, email, index, data, setData}) => {
-
-  const removeItem = (index) => {
-    let arr = data
-    arr.splice(index, 1)
-    setData([...arr])
-  }
+const Field = ({name, email, index, removeData}) => {
 
   return (
     <div className='data_val' key={index}>
