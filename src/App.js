@@ -1,75 +1,38 @@
 import './App.css';
 import Header from './components/Header';
-import { useState } from 'react';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
-
+import { useState, useEffect } from 'react';
 
 function App() {
-
-  // const [name, setName] = useState("")
-  // const [email, setEmail] = useState("")
-  const [form, setForm] = useState({})
+  const [state, setState] = useState(2)
   const [data, setData] = useState([])
 
-  const addData = () => {
-    // setData([...data, {name, email}])
-    // setName("")
-    // setEmail("")
-    setData([...data, form])
-    setForm({ name: "", email: "" })
+  useEffect(() => {
+    async function getData() {
+      const get = await fetch(`https://hub.dummyapis.com/employee?noofRecords=${state}&idStarts=1001`)
+      const res = await get.json()
+      setData(res)
 
-  }
-
-  const removeItem = (index) => {
-    let arr = data
-    arr.splice(index, 1)
-    setData([...arr])
-  }
+    }
+    getData()
+    
+    document.title = `${state} Employees Online`
+  }, [state])
 
   return (
     <div className="App">
       <Header />
-
-      {/* form */}
-      <div className='form'>
-        <Stack direction="row" spacing={2}>
-          {/* <TextField value={name} onChange={(event)=> setName(event.target.value)} id="outlined-basic" label="name" variant="outlined" />
-        <TextField value={email} onChange={(event)=> setEmail(event.target.value)} id="outlined-basic" label="email" variant="outlined" /> */}
-          <TextField value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} id="outlined-basic" label="name" variant="outlined" />
-          <TextField value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} id="outlined-basic" label="email" variant="outlined" />
-
-          <Button onClick={addData} variant="contained" color="success"><AddIcon /></Button>
-        </Stack>
-      </div>
-
-      {/* data */}
-      <div className='data'>
-        <div className='data_val'>
-
-          <h4>Name</h4>
-          <h4>Email</h4>
-          <h4>Remove</h4>
-        </div>
-        {
-          data.map((element, index) => {
-            return (
-              <div className='data_val'>
-
-                <h4>{element.name}</h4>
-                <h4>{element.email}</h4>
-
-                <Button onClick={() => removeItem(index)} variant="contained" color="error">
-                  <DeleteIcon />
-                </Button>
-              </div>
-            )
-          })
-        }
-      </div>
+      <button onClick={() => setState(state + 2)}>Add (Total={state})</button>
+      {
+        data.map((element, index)=>{
+          return(
+            <div className='data' key={index}>
+              <h4>{element.firstName}</h4>
+              <h4>{element.lastName}</h4>
+              <h4>{element.email}</h4>
+            </div>
+          )
+        })
+      }
     </div>
   );
 }
