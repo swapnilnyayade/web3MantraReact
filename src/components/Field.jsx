@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-const Field = ({name, email, index, removeData}) => {
+const Field = ({name, email, index, removeItem}) => {
 
   return (
     <div className='data_val' key={index}>
