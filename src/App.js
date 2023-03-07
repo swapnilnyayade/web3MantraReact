@@ -57,7 +57,7 @@ function App() {
         {
           data.map((element, index) => {
             return (
-              <div className='data_val'>
+              <div className='data_val' key={index}>
 
                 <h4>{element.name}</h4>
                 <h4>{element.email}</h4>
