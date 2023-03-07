@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
-import DeleteIcon from '@mui/icons-material/Delete';
+import Field from './components/Field';
 
 
 function App() {
@@ -22,12 +22,6 @@ function App() {
     setData([...data, form])
     setForm({ name: "", email: "" })
 
-  }
-
-  const removeItem = (index) => {
-    let arr = data
-    arr.splice(index, 1)
-    setData([...arr])
   }
 
   return (
@@ -57,15 +51,16 @@ function App() {
         {
           data.map((element, index) => {
             return (
-              <div className='data_val'>
+              <Field name={element.name} email={element.email} index={index} data={element.data} setData={setData} key={index}/>
+              // <div className='data_val' key={index}>
 
-                <h4>{element.name}</h4>
-                <h4>{element.email}</h4>
+              //   <h4>{element.name}</h4>
+              //   <h4>{element.email}</h4>
 
-                <Button onClick={() => removeItem(index)} variant="contained" color="error">
-                  <DeleteIcon />
-                </Button>
-              </div>
+              //   <Button onClick={() => removeItem(index)} variant="contained" color="error">
+              //     <DeleteIcon />
+              //   </Button>
+              // </div>
             )
           })
         }
