@@ -30,6 +30,13 @@ function App() {
     setData([...arr])
   }
 
+  const handlePress = (e) => {
+    console.log(e.key)
+    if(e.key == "Enter"){
+       addData()
+    }
+  }
+
   return (
     <div className="App">
       <Header />
@@ -39,10 +46,11 @@ function App() {
         <Stack direction="row" spacing={2}>
           {/* <TextField value={name} onChange={(event)=> setName(event.target.value)} id="outlined-basic" label="name" variant="outlined" />
         <TextField value={email} onChange={(event)=> setEmail(event.target.value)} id="outlined-basic" label="email" variant="outlined" /> */}
-          <TextField value={form.name} onChange={(event) => setForm({ ...form, name: event.target.value })} id="outlined-basic" label="name" variant="outlined" />
-          <TextField value={form.email} onChange={(event) => setForm({ ...form, email: event.target.value })} id="outlined-basic" label="email" variant="outlined" />
+          <TextField value={form.name} onCopy={()=>window.alert("Shhh.. Don't Copy")} onChange={(event) => setForm({ ...form, name: event.target.value })} onKeyUp={()=>window.alert("Up Key Pressed")} id="outlined-basic" label="name" variant="outlined" />
+          <TextField value={form.email} onPaste={()=>window.alert("shhh... Don't Paste")} onChange={(event) => setForm({ ...form, email: event.target.value })} onKeyPress={(e)=>handlePress(e)} id="outlined-basic" label="email" variant="outlined" />
 
           <Button onClick={addData} variant="contained" color="success"><AddIcon /></Button>
+          <Button onDoubleClick={addData} draggable onDrag={()=>console.log("Draggable")} variant="contained" color="success"><AddIcon /></Button>
         </Stack>
       </div>
 
@@ -57,7 +65,7 @@ function App() {
         {
           data.map((element, index) => {
             return (
-              <div className='data_val'>
+              <div className='data_val' key={index}>
 
                 <h4>{element.name}</h4>
                 <h4>{element.email}</h4>
