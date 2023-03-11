@@ -1,40 +1,36 @@
 .App {
   text-align: center;
-  color: black;
-  display: flex;             
-  align-items: center;        
-  flex-direction: column;
 }
 
 h1 {
   margin: 0;
 }
 
-.header {
-  background-color: #130f40;
-  color: white;
-  padding: 14px;
-  width: 100%;
+.heading {
+  background-color: darkgoldenrod;
+  padding: 15px;
 }
 
-.form {
-  margin-top: 20px;
+a {
+  color: aliceblue;
+  text-decoration: none;
+  margin: 5px;
+}
+
+.contact a {
+  color:crimson;
+  margin: 0;
 }
 
 .data {
-  margin-top: 15px;
-  width: 100%;
-  display: flex;                    /*  to make elements inside the .main to take space as required */
-  align-items: center;              /*  to make elements in centre vertically                       */
-  flex-direction: column;           /*  to make elements inside the .data vertical                  */
-  margin-top: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px;
+  background-color: aquamarine;
+  color: black;
 }
 
-.data_val {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 60%;
-  padding: 0px 9px 0px 9px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.home button {
+  margin: 15px;
+  background-color: green;
 }
