@@ -1,3 +1,13 @@
+![image](https://user-images.githubusercontent.com/62053997/224695866-db9a8a55-39a2-47e3-bf89-b48944a2c775.png)
+
+
+# Instructions
+1.Go to the project folder.\
+2.Run following commands:\
+  git init\
+  npm i\
+  npm start
+  
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
