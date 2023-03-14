@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <div className='header'>
-      <h1>Record Management</h1>
+        <h1>React Custom Hooks</h1>
     </div>
   )
 }
